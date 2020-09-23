@@ -1,15 +1,14 @@
 server {
     listen       80;
 
-
     location /api {
         rewrite ^/api(/.*)$ $1 break;
-        proxy_pass http://methanesourcefinder-34f87bb24f8b2d4e.elb.us-west-2.amazonaws.com:8001;
+        proxy_pass ${API_HOST}:${API_PORT};
     }
 
     location /server {
         rewrite ^/server(/.*)$ $1 break;
-        proxy_pass http://methanesourcefinder-34f87bb24f8b2d4e.elb.us-west-2.amazonaws.com:8002;
+        proxy_pass ${STATIC_HOST}:${STATIC_PORT};
     }
 
     location / {
