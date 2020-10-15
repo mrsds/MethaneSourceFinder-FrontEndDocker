@@ -38,9 +38,9 @@ APPLICATION_CONFIG = {
 ```
 
 */
-
+// Below gets overwritten anyway
 APPLICATION_CONFIG = {
     APP_TITLE: "Methane Source Finder",
-    BE_ENDPOINT: "http://100.64.114.187",
-    BE_PORT: "9090"
+    BE_ENDPOINT: "http://methanesourcefinder-34f87bb24f8b2d4e.elb.us-west-2.amazonaws.com/",
+    BE_PORT: "8001"
 };
