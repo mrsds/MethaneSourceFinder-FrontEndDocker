@@ -2,6 +2,7 @@ FROM node:9.11.1 as react_build
 WORKDIR /build
 COPY package.json /build
 COPY . /build
+COPY lib /build/src/lib
 RUN npm install
 RUN npm run build
 
