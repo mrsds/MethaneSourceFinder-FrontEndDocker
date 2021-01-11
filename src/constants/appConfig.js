@@ -124,7 +124,8 @@ const APP_CONFIG = Immutable.fromJS({
         },
         {
             name: "GRIDDED_EMISSIONS_V2",
-            dateEndpoint: beEndpoint + "/data/gridded/gridded_date_list.json",
+//            dateEndpoint: beEndpoint + "/data/gridded/gridded_date_list.json",
+            dateEndpoint: "server/data/gridded/gridded_date_list.json", // Above used api instead of static?
             endpoint: "/server/data/gridded/v2/Fluxes_{date}.geojson",
             period: "daily"
         }
