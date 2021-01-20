@@ -66,7 +66,11 @@ export class LayerInfoContainer_Extended extends Component {
                 onClose={this.props.appActions.closeLayerInfo}
             >
                 <DialogContent className={contentClasses}>
-                    <AsyncImage className={styles.thumbnailImage} src={this.props.thumbnailUrl} />
+                    <AsyncImage
+                        className={styles.thumbnailImage}
+                        src={this.props.thumbnailUrl}
+                        alt={this.props.thumbnailAltText}
+                    />
                     <div className={styles.layerInfoContent}>
                         <div className={loadingClasses}>
                             <LoadingSpinner className={styles.layerInfoSpinner} />
@@ -153,6 +157,7 @@ LayerInfoContainer_Extended.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     layerId: PropTypes.string.isRequired,
     thumbnailUrl: PropTypes.string.isRequired,
+    thumbnailAltText: PropTypes.string,
     metadata: PropTypes.object.isRequired,
     layerMetadataAsync: PropTypes.object.isRequired,
     className: PropTypes.string
@@ -163,6 +168,7 @@ function mapStateToProps(state) {
         isOpen: state.layerInfo.get("isOpen"),
         layerId: state.layerInfo.get("activeLayerId"),
         thumbnailUrl: state.layerInfo.get("activeThumbnailUrl"),
+        thumbnailAltText: state.layerInfo.get("activeThumbnailAltText"),
         metadata: state.layerInfo.get("metadata"),
         layerMetadataAsync: state.asynchronous.get("layerMetadataAsync")
     };

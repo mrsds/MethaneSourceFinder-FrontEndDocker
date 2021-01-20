@@ -9,6 +9,7 @@
             "visibleInGroup": true,
             "url": "/api/vista?category=1&maxObjects=10000",
             "thumbnailImage": "img/Vista-Infrastructure.png",
+            "thumbnailAltText": "Example image of Vista Infrastructure for top banner",
             "group": "VISTA",
             "updateParameters": { "time": false },
             "layerOrder": 2,
@@ -233,6 +234,7 @@
             "isDefault": true,
             "url": "/api/aviris/plumes",
             "thumbnailImage": "img/AVIRIS.png",
+            "thumbnailAltText": "Example image of AVIRIS plume image for top banner",
             "palette": {
                 "name": "AVIRIS_plumes",
                 "handleAs": "json-fixed"
@@ -255,6 +257,7 @@
             "isDefault": false,
             "url": "/server/data/gridded/v2/Fluxes_20150128.geojson",
             "thumbnailImage": "img/gridded_methane_v1.png",
+            "thumbnailAltText": "Example image of gridded inventory for top banner",
             "opacity": 0.3,
             "metadata": {
                 "url": "default-data/msf-data/layer-metadata/Grid-Megacities.json",
@@ -280,6 +283,7 @@
             "isDefault": false,
             "url": "/server/data/epa_gridded_total_2012.geojson",
             "thumbnailImage": "img/gridded_methane_v1.png",
+            "thumbnailAltText": "Example image of gridded inventory for top banner",
             "opacity": 0.3,
             "metadata": {
                 "url": "default-data/msf-data/layer-metadata/Grid-EPA.json",
@@ -411,6 +415,7 @@
             "isDefault": true,
             "url": "api/sources?maxLat={latMax}&minLat={latMin}&maxLon={lonMax}&minLon={lonMin}",
             "thumbnailImage": "img/msf-pointsources.png",
+            "thumbnailAltText": "Example image of point sources for top banner",
             "updateParameters": { "time": false },
             "layerOrder": 16
         },
@@ -432,6 +437,7 @@
             "isDefault": false,
             "url": "/server/flightlines_all.kml",
             "thumbnailImage": "img/msf-flightcoverage.png",
+            "thumbnailAltText": "Example image of flight coverages for top banner",
             "updateParameters": { "time": false },
             "layerOrder": 0
         }

@@ -15,7 +15,8 @@ export default class LayerInfoReducer {
             .set("isOpen", true)
             .set("activeLayerId", action.layer.get("id"))
             .setIn(["metadata", "content"], null)
-            .set("activeThumbnailUrl", action.layer.get("thumbnailImage"));
+            .set("activeThumbnailUrl", action.layer.get("thumbnailImage"))
+            .set("activeThumbnailAltText", action.layer.get("thumbnailAltText"));
     }
 
     static closeLayerInfo(state, action) {

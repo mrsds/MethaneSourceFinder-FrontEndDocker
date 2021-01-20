@@ -56,7 +56,12 @@ export class AsyncImage extends Component {
 
         return (
             <div className={containerClasses}>
-                <img ref="imgLoader" src={this.props.src} className={imageClasses} />
+                <img
+                    ref="imgLoader"
+                    src={this.props.src}
+                    className={imageClasses}
+                    alt={this.props.alt}
+                />
                 <div ref="imgDest" className={destinationClasses} style={destinationStyles} />
             </div>
         );
@@ -65,6 +70,7 @@ export class AsyncImage extends Component {
 
 AsyncImage.propTypes = {
     src: PropTypes.string.isRequired,
+    alt: PropTypes.string,
     className: PropTypes.string
 };
 
