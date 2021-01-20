@@ -3,6 +3,8 @@ env:
   secrets-manager:
     ENV_ACCESS_KEY: UAT_DEPLOYMENT_KEY:UAT_DEPLOYMENT_KEY ## secret_key_param: secret_name:secret_key
     ENV_ACCESS_SECRET: UAT_DEPLOYMENT_SECRET:UAT_DEPLOYMENT_SECRET ## secret_key_param: secret_name:secret_key
+    ENV_PROD_ACCESS_KEY: PROD_DEPLOYMENT_KEY:PROD_DEPLOYMENT_KEY ## secret_key_param: secret_name:secret_key
+    ENV_PROD_ACCESS_SECRET: PROD_DEPLOYMENT_SECRET:PROD_DEPLOYMENT_SECRET ## secret_key_param: secret_name:secret_key
     ENV_DOCKER_HUB_USERNAME: DOCKER_HUB_USERNAME:DOCKER_HUB_USERNAME ## secret_key_param: secret_name:secret_key
     ENV_DOCKER_HUB_PASSWORD: DOCKER_HUB_PASSWORD:DOCKER_HUB_PASSWORD ## secret_key_param: secret_name:secret_key
 phases:
@@ -31,6 +33,11 @@ phases:
           elif [ "$ENVIRONMENT_NAME" = "UAT" ]; then
             aws configure set aws_access_key_id $ENV_ACCESS_KEY --profile deployer
             aws configure set aws_secret_access_key $ENV_ACCESS_SECRET --profile deployer
+            aws configure set default.region us-west-2 --profile deployer
+            aws ecs update-service --cluster arn:aws:ecs:$AWS_DEFAULT_REGION:$AWS_ACCOUNT_ID:cluster/$CLUSTER_NAME --service "$SERVICE_NAME" --task-definition "$TASK_NAME" --force-new-deployment --profile deployer
+          elif [ "$ENVIRONMENT_NAME" = "Production" ]; then
+            aws configure set aws_access_key_id $ENV_PROD_ACCESS_KEY --profile deployer
+            aws configure set aws_secret_access_key $ENV_PROD_ACCESS_SECRET --profile deployer
             aws configure set default.region us-west-2 --profile deployer
             aws ecs update-service --cluster arn:aws:ecs:$AWS_DEFAULT_REGION:$AWS_ACCOUNT_ID:cluster/$CLUSTER_NAME --service "$SERVICE_NAME" --task-definition "$TASK_NAME" --force-new-deployment --profile deployer
           fi
