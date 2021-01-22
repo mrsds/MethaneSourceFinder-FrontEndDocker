@@ -215,6 +215,7 @@ export class ShareContainer extends Component {
                         This URL contains the information to reproduce this current view of the map.
                     </p>
                     <input
+                        aria-label="Sharable URL"
                         type="text"
                         ref={input => {
                             if (typeof input !== "undefined") {
@@ -230,6 +231,7 @@ export class ShareContainer extends Component {
                         <Grid container spacing={0}>
                             <Grid item xs>
                                 <Button
+                                    aria-label="share via email"
                                     variant="fab"
                                     style={{ color: "white", background: "#505050" }}
                                     onClick={() => this.shareEmail(shareUrl)}
@@ -239,6 +241,7 @@ export class ShareContainer extends Component {
                             </Grid>
                             <Grid item xs>
                                 <Button
+                                    aria-label="share via Facebook"
                                     variant="fab"
                                     style={{ color: "white", background: "#3B5998" }}
                                     onClick={() => this.shareFacebook(shareUrl)}
@@ -248,6 +251,7 @@ export class ShareContainer extends Component {
                             </Grid>
                             <Grid item xs>
                                 <Button
+                                    aria-label="share via Twitter"
                                     variant="fab"
                                     style={{ color: "white", background: "#55ACEE" }}
                                     onClick={() => this.shareTwitter(shareUrl)}
@@ -257,6 +261,7 @@ export class ShareContainer extends Component {
                             </Grid>
                             <Grid item xs>
                                 <Button
+                                    aria-label="share via Reddit"
                                     variant="fab"
                                     style={{ color: "white", background: "#DD4B39" }}
                                     onClick={() => this.shareReddit(shareUrl)}

@@ -48,6 +48,7 @@ export class ModalMenu extends Component {
                             onClick={this.props.backFunc}
                             color="inherit"
                             className={backClasses}
+                            aria-label="Back"
                         >
                             <ArrowBackIcon />
                         </IconButton>
@@ -58,6 +59,7 @@ export class ModalMenu extends Component {
                             color="inherit"
                             onClick={this.props.closeFunc}
                             className={closeClasses}
+                            aria-label="Close dialog"
                         >
                             <CloseIcon />
                         </IconButton>

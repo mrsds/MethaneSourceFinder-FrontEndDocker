@@ -67,6 +67,10 @@ export class LayerDateControl extends Component {
                     <IconButton
                         className={styles.incrementButton}
                         disabled={this.incrementActive("day", true)}
+                        aria-label={
+                            "Previous day" +
+                            (this.incrementActive("day", true) ? " (disabled)" : "")
+                        }
                     >
                         <ChevronLeftIcon onClick={() => this.props.incrementDate("day", true)} />
                     </IconButton>
@@ -74,6 +78,10 @@ export class LayerDateControl extends Component {
                     <IconButton
                         className={styles.incrementButton}
                         disabled={this.incrementActive("day")}
+                        aria-label={
+                            "Previous day" +
+                            (this.incrementActive("day", true) ? " (disabled)" : "")
+                        }
                     >
                         <ChevronRightIcon onClick={() => this.props.incrementDate("day")} />
                     </IconButton>
@@ -115,6 +123,10 @@ export class LayerDateControl extends Component {
                     <IconButton
                         className={styles.incrementButton}
                         disabled={this.incrementActive("month", true)}
+                        aria-label={
+                            "Previous month" +
+                            (this.incrementActive("month", true) ? " (disabled)" : "")
+                        }
                     >
                         <ChevronLeftIcon onClick={() => this.props.incrementDate("month", true)} />
                     </IconButton>
@@ -122,6 +134,10 @@ export class LayerDateControl extends Component {
                     <IconButton
                         className={styles.incrementButton}
                         disabled={this.incrementActive("month")}
+                        aria-label={
+                            "Next month" +
+                            (this.incrementActive("month", true) ? " (disabled)" : "")
+                        }
                     >
                         <ChevronRightIcon onClick={() => this.props.incrementDate("month")} />
                     </IconButton>

@@ -61,7 +61,15 @@ export class SettingsContainerExtended extends Component {
                             )
                         }
                     >
-                        <Checkbox disableRipple checked={this.props.analyticsEnabled} />
+                        <Checkbox
+                            disableRipple
+                            checked={this.props.analyticsEnabled}
+                            inputProps={{
+                                "aria-label":
+                                    "User Feedback Program Option Checkbox " +
+                                    (this.props.analyticsEnabled ? " (checked)" : " (unchecked)")
+                            }}
+                        />
                         <ListItemText
                             primary="User Feedback Program"
                             secondary="Help us improve this tool by sending anonymous usage information"
@@ -73,7 +81,17 @@ export class SettingsContainerExtended extends Component {
                             this.props.appActions.setAutoUpdateUrl(!this.props.autoUpdateUrlEnabled)
                         }
                     >
-                        <Checkbox disableRipple checked={this.props.autoUpdateUrlEnabled} />
+                        <Checkbox
+                            disableRipple
+                            checked={this.props.autoUpdateUrlEnabled}
+                            inputProps={{
+                                "aria-label":
+                                    "Auto-Update URL Option Checkbox " +
+                                    (this.props.autoUpdateUrlEnabled
+                                        ? " (checked)"
+                                        : " (unchecked)")
+                            }}
+                        />
                         <ListItemText
                             primary="Auto-Update Url"
                             secondary="Automatically update the url in this window to be shareable"
