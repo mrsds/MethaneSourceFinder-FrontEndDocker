@@ -185,7 +185,17 @@ export class InfrastructureChartingContainer extends Component {
                                         key={"All"}
                                         className={styles.formControlLabel}
                                     >
-                                        <Radio value={""} checked={currentValue === null} />
+                                        <Radio
+                                            value={""}
+                                            checked={currentValue === null}
+                                            inputProps={{
+                                                "aria-label":
+                                                    "Show all plumes" +
+                                                    (currentValue === null
+                                                        ? " (currently selected)"
+                                                        : "")
+                                            }}
+                                        />
                                         <Typography className={styles.radioLabel}>All</Typography>
                                     </div>
                                     {getOptionsFunction().map(sourceId => {
@@ -203,6 +213,15 @@ export class InfrastructureChartingContainer extends Component {
                                                         currentValue !== null &&
                                                         currentValue === sourceId
                                                     }
+                                                    inputProps={{
+                                                        "aria-label":
+                                                            "Show only plume " +
+                                                            sourceId +
+                                                            (currentValue !== null &&
+                                                            currentValue === sourceId
+                                                                ? " (currently selected)"
+                                                                : "")
+                                                    }}
                                                 />
                                                 <Typography className={styles.radioLabel}>
                                                     {sourceId}
