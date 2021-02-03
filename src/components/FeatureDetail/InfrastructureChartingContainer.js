@@ -444,7 +444,7 @@ export class InfrastructureChartingContainer extends Component {
                                     }
                                 >
                                     <img
-                                        src={feature.get("rgbqlctr_url")}
+                                        src={this.props.feature.get("rgbqlctr_url")}
                                         alt={this.props.feature.get("name")}
                                     />
                                     <GridListTileBar
