@@ -19,9 +19,9 @@ case $ENVIRONMENT_NAME in
   ;;
 
   Production)
-    export API_HOST=http://methanesourcefinder-34f87bb24f8b2d4e.elb.us-west-2.amazonaws.com
+    export API_HOST=http://methanesourcefinder-nlb-9c414239eebd5e3f.elb.us-west-2.amazonaws.com/
     export API_PORT=8001
-    export STATIC_HOST=http://methanesourcefinder-34f87bb24f8b2d4e.elb.us-west-2.amazonaws.com
+    export STATIC_HOST=http://methanesourcefinder-nlb-9c414239eebd5e3f.elb.us-west-2.amazonaws.com/
     export STATIC_PORT=8002
   ;;
 
