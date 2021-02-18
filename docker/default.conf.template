@@ -9,7 +9,7 @@ server {
         rewrite ^/api(/.*)$ $1 break;
         proxy_pass ${API_HOST}:${API_PORT};
         proxy_cache        PROXYCACHE;
-        proxy_cache_valid any 1y;
+        proxy_cache_valid 200 1y;
         proxy_ignore_headers Set-Cookie Cache-Control Expires;
         proxy_buffering on;
     }
