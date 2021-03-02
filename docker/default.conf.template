@@ -19,6 +19,11 @@ server {
         proxy_pass ${STATIC_HOST}:${STATIC_PORT};
     }
 
+    location /map {
+        root   /usr/share/nginx/html;
+        try_files $uri $uri/ /index.html;
+    }
+
     location / {
         root   /usr/share/nginx/html;
         index  index.html index.htm;

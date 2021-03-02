@@ -39,4 +39,5 @@ echo Static Host: $STATIC_HOST
 echo Static Port: $STATIC_PORT
 
 export upstream_cache_status='$upstream_cache_status'  #Needed to keep $upstream_cache_status as variable when creating nginx conf with envsubst
+export uri='$uri'                                      #Needed to keep $uri as variable when creating nginx conf with envsubst
 envsubst < default.conf.template > default.conf
