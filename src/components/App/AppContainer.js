@@ -100,7 +100,8 @@ export class AppContainer extends Component {
         );
 
         // Perform initial browser functionality check
-        this.props.checkBrowserFunctionalities();
+        // Disabling checkBrowserFunctionalities since alerts are low criticality and difficult to close in mobile view
+        //this.props.checkBrowserFunctionalities();
 
         // load in initial data
         this.props.loadInitialData(() => {
