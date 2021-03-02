@@ -10,7 +10,8 @@ export const MSFAnalyticsState = Immutable.fromJS({
         selectedSubsector: null,
         selectedUnits: "kg",
         startDate: moment("2000-01-01"),
-        endDate: moment(Date.now())
+        //endDate: moment(Date.now())  //This messes with the cache as enddate keep changing.  Hardcoding to 2040 but needs better solution (i.e. latest entry in DB)
+        endDate: moment("2040-01-01")
     },
     summaryDataIsLoading: false,
     summaryData: null,
