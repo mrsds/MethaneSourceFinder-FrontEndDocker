@@ -14,7 +14,7 @@ WORKDIR /ngnix
 COPY --from=react_build /build/docker /ngnix
 RUN sh makeNgnixConf.sh
 RUN cp -v default.conf /etc/nginx/conf.d/default.conf
-#COPY --from=react_build /build/docker/default.conf /etc/nginx/conf.d/default.conf
+RUN cp -v map.html /usr/share/nginx/html/map.html
 COPY --from=react_build /build/dist /usr/share/nginx/html
 
 EXPOSE 80/tcp
